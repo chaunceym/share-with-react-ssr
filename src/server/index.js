@@ -3,14 +3,14 @@ import React from "react";
 import { render } from "./utils";
 import { matchRoutes } from "react-router-config";
 import Routes from "../Routes";
-import store from "../store";
+import { getServerStore } from "../store";
 
 const app = express();
 
 app.use(express.static("public"));
 
 app.get("*", (req, res) => {
-  const serverStore = store();
+  const serverStore = getServerStore();
   const matchedRoutes = matchRoutes(Routes, req.path); // 匹配当前路径
   const promises = [];
   matchedRoutes.forEach((item) => {

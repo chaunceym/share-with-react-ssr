@@ -1,3 +1,4 @@
+import Routes from "../Routes";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import React from "react";
@@ -18,7 +19,12 @@ export const render = (req, store, routes) => {
       </head>
       <body>
         <h1>React SSR 分享会</h1>
-        <div id="root">${content}</div>
+        <div id="root">${content}</div> 
+        <script>
+         window.context = {
+           state: ${JSON.stringify(store.getState())}
+         }
+        </script>
         <script src="/index.js"></script>
       </body>
     </html>

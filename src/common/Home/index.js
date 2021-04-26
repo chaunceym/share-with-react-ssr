@@ -5,7 +5,7 @@ import { getHomeList } from "./store/actions";
 class Home extends Component {
   componentDidMount() {
     console.log("mount============");
-    this.props.getHomeList();
+    !this.props.list.length && this.props.getHomeList();
   }
 
   render() {
