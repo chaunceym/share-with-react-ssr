@@ -1,0 +1,10 @@
+.idea
+.vscode
+yarn.lock
+yarn-error.log
+/build/
+/public/
+/node_modules/
+/share_with_react_ssr/
+package-lock.json
+./node_server/node_modules

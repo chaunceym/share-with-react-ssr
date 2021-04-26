@@ -1,0 +1,50 @@
+{
+  "name": "reactssr",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:**",
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
+    "dev:build:server": "npx webpack --config webpack.server.js --watch",
+    "dev:build:client": "npx webpack --config webpack.client.js --watch"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "isomorphic-style-loader": "^5.1.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.3",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.34.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.7.3",
+    "webpack-node-externals": "^2.5.2",
+    "yarn-run-all": "^3.1.1"
+  },
+  "main": "webpack.base.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaunceym/reactSSR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaunceym/reactSSR/issues"
+  },
+  "homepage": "https://github.com/chaunceym/reactSSR#readme",
+  "description": ""
+}

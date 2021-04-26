@@ -1,0 +1,19 @@
+const express = require("express");
+const app = express();
+
+// 配置跨域
+app.all("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By", " 3.2.1");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
+// 可以访问静态文件
+app.use(express.static("static"));
+
+app.listen(4001, () => {
+  console.log("server is running 4001");
+});
