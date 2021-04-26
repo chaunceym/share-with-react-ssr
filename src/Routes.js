@@ -3,9 +3,18 @@ import { Route } from "react-router-dom";
 import Home from "./common/Home";
 import Login from "./common/Login";
 
-export default (
-  <div>
-    <Route path="/" exact component={Home} />
-    <Route path="/login" exact component={Login} />
-  </div>
-);
+export default [
+  {
+    path: "/",
+    component: Home,
+    exact: true,
+    loadData: Home.loadData, // 解析路径, 如果有 loadData 就为服务端执行
+    key: "home",
+  },
+  {
+    path: "/login",
+    component: Login,
+    exact: true,
+    key: "login",
+  },
+];

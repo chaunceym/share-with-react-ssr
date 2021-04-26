@@ -10,6 +10,25 @@ class Home extends Component {
 
   render() {
     const { list } = this.props;
+    // 解决报错
+    // const list = [
+    //   {
+    //     id: 1,
+    //     title: "1111111",
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "2222222",
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "3333333",
+    //   },
+    //   {
+    //     id: 4,
+    //     title: "4444444",
+    //   },
+    // ];
     console.log("render============");
     console.log(list);
     return (
@@ -39,4 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // 连接 store
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+const withLoadDataHome = connect(mapStateToProps, mapDispatchToProps)(Home);
+
+withLoadDataHome.loadData = (store) => {
+  return store.dispatch(getHomeList());
+};
+
+export default withLoadDataHome;
