@@ -5,6 +5,8 @@ import { renderToString } from "react-dom/server";
 
 const app = express();
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   const content = renderToString(<Home />);
   res.send(`
@@ -15,6 +17,7 @@ app.get("/", (req, res) => {
       <body>
         <h1>React SSR 分享会</h1>
         <div id="root">${content}</div>
+        <script src="/index.js"></script>
       </body>
     </html>
   `);
